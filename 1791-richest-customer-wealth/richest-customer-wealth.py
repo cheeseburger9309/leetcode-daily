@@ -1,9 +1,9 @@
 class Solution(object):
     def maximumWealth(self, accounts):
 
-        row_sums = [sum(row) for row in accounts]  
+         
 
-        return max(row_sums)
+        return max(sum(row) for row in accounts)
 
         
         """
