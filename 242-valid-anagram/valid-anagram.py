@@ -6,7 +6,16 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        sorted_s = sorted(s)
-        sorted_t = sorted(t)
-        return sorted_s == sorted_t
+        count = defaultdict(int)
+
+        for x in s:
+            count[x] +=1
+
+        for x in t:
+            count[x] -=1
+        
+        for val in count.values():
+            if val != 0:
+                return False
+        return True
 
