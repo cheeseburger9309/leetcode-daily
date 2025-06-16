@@ -5,10 +5,10 @@ class Solution(object):
         :rtype: int
         """
 
-        nums_set = set(nums)  # O(n) time and space
+        nums = set(nums)  # O(n) time and space
         smallest = 1
 
-        while smallest in nums_set:
+        while smallest in nums:
             smallest += 1
 
         return smallest
