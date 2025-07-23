@@ -10,7 +10,7 @@ class Solution(object):
             units = temp%10
             sum = (sum*10) + units
             temp = int(temp//10)
-        print(sum, x)
+        # print(sum, x)
         return(sum == x)
 
         # array = []
