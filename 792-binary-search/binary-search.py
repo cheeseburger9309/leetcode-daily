@@ -7,15 +7,17 @@ class Solution(object):
         """
         low = 0
         high = len(nums) - 1
+
         while low <= high:
-            middle = (low + high)//2
-            if nums[middle] == target:
-                return middle
-            if nums[middle] > target:
-                high = middle -1
-            if nums[middle] < target:
-                low = middle + 1
-        else:
-            return -1
+            mid = (low + high)//2
+            if target == nums[mid]:
+                return mid
+            elif target > nums[mid]:
+                low = mid + 1
+                # self.search(nums, target)
+            elif target < nums[mid]:
+                high = mid - 1
+                # self.search(nums, target)
+        return -1
 
         
