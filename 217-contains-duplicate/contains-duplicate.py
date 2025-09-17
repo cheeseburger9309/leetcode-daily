@@ -1,12 +1,29 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-        seen = {}
         """
         :type nums: List[int]
         :rtype: bool
         """
-        for num in nums:
-            if num in seen and seen[num]>=1:
-                return True
-            seen[num] = seen.get(num, 0) + 1
-        return False    
+        # Brute-force: 
+        # for i in range(len(nums)):
+        #     for j in range(i + 1, len(nums)):
+        #         if nums[i] == nums[j]:
+        #             return True
+        # return False
+
+        nums.sort()
+        if len(nums) > 1:
+            for i in range(len(nums) - 1):
+                print(nums[i])
+                print(nums[i+1])
+                if nums[i] == nums[i+1]:
+                    return True
+            return False
+        else:
+            return False
+
+
+
+
+        
+
