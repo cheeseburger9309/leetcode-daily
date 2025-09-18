@@ -1,21 +1,15 @@
 class Solution(object):
     def isAnagram(self, s, t):
-        
         """
         :type s: str
         :type t: str
         :rtype: bool
         """
-        count = defaultdict(int)
+        sorted_s = sorted(s)
+        sorted_t = sorted(t)
 
-        for x in s:
-            count[x] +=1
-
-        for x in t:
-            count[x] -=1
+        if sorted_s == sorted_t:
+            return True
+        else:
+            return False
         
-        for val in count.values():
-            if val != 0:
-                return False
-        return True
-
