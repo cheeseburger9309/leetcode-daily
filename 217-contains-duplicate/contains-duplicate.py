@@ -4,13 +4,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        dupset = set()
+        hashmap = set()
 
-        for n in nums:
-            if n in dupset:
+        for i in range(len(nums)):
+            if nums[i] in hashmap:
                 return True
-            dupset.add(n)
+            else:
+                hashmap.add(nums[i])
         return False
-
-        
-        
