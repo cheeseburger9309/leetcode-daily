@@ -5,8 +5,9 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        hashmaps = {}
-        hashmapt = {}
+        if len(s) != len(t):
+            return False
+        hashmaps, hashmapt = {}, {}
 
         for char in s:
             hashmaps[char] = 1 + hashmaps.get(char, 0)
