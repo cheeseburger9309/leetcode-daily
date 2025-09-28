@@ -7,11 +7,18 @@ class Solution(object):
         """
         if len(s) != len(t):
             return False
-        hashmaps, hashmapt = {}, {}
+        
+        hashmap = {}
 
-        for i in range(len(s)):
-            hashmaps[s[i]] = 1 + hashmaps.get(s[i], 0)
-            hashmapt[t[i]] = 1 + hashmapt.get(t[i], 0)
-        return hashmaps == hashmapt
+        for char in s:
+            hashmap[char] = 1 + hashmap.get(char, 0)
+        
+        for char in t:
+            if char not in hashmap or hashmap[char] == 0:
+                return False
+            hashmap[char] -= 1 
+        return True
+
+        
     
         
