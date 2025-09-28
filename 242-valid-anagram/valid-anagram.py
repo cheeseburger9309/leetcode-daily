@@ -9,10 +9,9 @@ class Solution(object):
             return False
         hashmaps, hashmapt = {}, {}
 
-        for char in s:
-            hashmaps[char] = 1 + hashmaps.get(char, 0)
-        for char in t:
-            hashmapt[char] = 1 + hashmapt.get(char, 0)
+        for i in range(len(s)):
+            hashmaps[s[i]] = 1 + hashmaps.get(s[i], 0)
+            hashmapt[t[i]] = 1 + hashmapt.get(t[i], 0)
         return hashmaps == hashmapt
     
         
