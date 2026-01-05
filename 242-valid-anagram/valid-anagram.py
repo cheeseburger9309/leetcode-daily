@@ -5,8 +5,18 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        sorted_s = ''.join(sorted(s))
-        sorted_t = ''.join(sorted(t))
+        dict = {}
 
-        return sorted_s == sorted_t
+        for char in s:
+            if char in dict:
+                dict[char] += 1
+            else:
+                dict[char] = 1
+        
+        for char in t:
+            if char in dict:
+                dict[char] -= 1
+            else:
+                return False
+        return all(value == 0 for value in dict.values())
             
