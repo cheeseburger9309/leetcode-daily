@@ -5,18 +5,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        # hashmap = {}
+        seen = {}
+        for i, num in enumerate(nums):
+            if target - num in seen:
+                return [seen[target - num], i]
+            seen[num] = i
+         
 
-        # for i, n in enumerate(nums):
-        #     diff = target - n
-        #     if diff in hashmap:
-        #         return [hashmap[diff], i]
-        #     hashmap[n] = i
-        
-        hashmap = {}
-
-        for i in range(len(nums)):
-            if (target - nums[i]) in hashmap:
-                return hashmap[target-nums[i]], i
-            else:
-                hashmap[nums[i]] = i
