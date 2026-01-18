@@ -5,18 +5,12 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        dict = {}
-
-        for char in s:
-            if char in dict:
-                dict[char] += 1
-            else:
-                dict[char] = 1
+        if len(s) != len(t):
+            return False
         
-        for char in t:
-            if char in dict:
-                dict[char] -= 1
-            else:
-                return False
-        return all(value == 0 for value in dict.values())
+        str1 = sorted(s)
+        str2 = sorted(t)
+
+        return str1 == str2
+
             
