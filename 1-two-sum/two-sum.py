@@ -10,7 +10,7 @@ class Solution(object):
 
         for i,num in enumerate(nums):
             if (target - num) in hashmap:
-                return [hashmap.get(target - num), i]
+                return [hashmap[target - num], i]
             hashmap[num] = i
 
 
