@@ -5,14 +5,13 @@ class Solution(object):
         :rtype: List[List[str]]
         """
 
-        hashmap = {}
+        hashmap = defaultdict(list)
 
         for s in strs:
             key = tuple(sorted(s))
-            if key in hashmap:
-                hashmap[key].append(s)
-            else:
-                hashmap[key] = [s]
+            hashmap[key].append(s)
+            # else:
+            #     hashmap[key] = [s]
         
         return hashmap.values()
         
