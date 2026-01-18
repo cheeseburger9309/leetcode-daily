@@ -8,8 +8,7 @@ class Solution(object):
         for num in nums:
             if num in final:
                 return True
-            else:
-                final.add(num)
+            final.add(num)
         return False
 
 
