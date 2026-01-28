@@ -4,13 +4,13 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        cleaned = ''.join([char for char in s if char.isalnum()])
-        lower = cleaned.lower()
+        s = ''.join([char for char in s if char.isalnum()])
+        s = s.lower()
 
-        j = len(lower) - 1
+        j = len(s) - 1
 
         for i in range(j+1):
-            if lower[i] == lower[j]:
+            if s[i] == s[j]:
                 j = j - 1
                 continue
             else:
