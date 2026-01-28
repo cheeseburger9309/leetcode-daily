@@ -7,15 +7,17 @@ class Solution(object):
         s = ''.join([char for char in s if char.isalnum()])
         s = s.lower()
 
-        return s == s[::-1]
+        # return s == s[::-1]
 
-        # j = len(s) - 1
+        j = len(s) - 1
+        i = 0
 
-        # for i in range(j+1):
-        #     if s[i] == s[j]:
-        #         j = j - 1
-        #         continue
-        #     else:
-        #         return False
-        # return True
+        while i < j:
+            if s[i] == s[j]:
+                j = j - 1
+                i = i + 1
+                continue
+            else:
+                return False
+        return True
         
